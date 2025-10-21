@@ -1,0 +1,71 @@
+:root {
+  /* 主色调 - 温暖橙色系 */
+  --primary: 35 92% 55%; /* #f59e0b */
+  --primary-light: 48 96% 67%; /* #fbbf24 */
+  --primary-dark: 32 95% 44%; /* #d97706 */
+  --secondary: 25 95% 53%; /* #f97316 */
+  --accent: 25 84% 65%; /* #fb923c */
+  
+  /* 背景色 */
+  --background: 48 71% 97%; /* #fefdf8 */
+  --surface: 0 0% 100%; /* #ffffff */
+  
+  /* 文字颜色 */
+  --text: 215 28% 17%; /* #1f2937 */
+  --text-secondary: 220 9% 46%; /* #6b7280 */
+  
+  /* 渐变色彩 */
+  --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+  --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--surface)));
+  
+  /* 阴影效果 */
+  --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+  --shadow-glow: 0 0 40px hsl(var(--primary-light) / 0.4);
+  
+  /* 动画 */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.5);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+
+/* 数字滚动动画 */
+@keyframes number-roll {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.number-roll {
+  animation: number-roll 0.6s ease-out;
+}
+
+/* 卡片悬浮效果 */
+.card-hover {
+  transition: var(--transition-smooth);
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-elegant);
+}
